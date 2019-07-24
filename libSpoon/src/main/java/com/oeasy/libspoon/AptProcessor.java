@@ -41,9 +41,9 @@ import spoon.reflect.factory.Factory;
 import spoon.reflect.reference.CtTypeReference;
 
 /**
- * @Author: zhangqiaowenxiang
- * @Time: 2019/7/18
- * @Description: This is
+ * author zhangqiaowenxiang
+ * time 2019/7/18
+ * desc This is
  */
 @AutoService(Processor.class)
 public class AptProcessor extends AbstractProcessor {

@@ -5,9 +5,9 @@ import com.oeasy.libannotation.*;
 import com.oeasy.libannotation.java8.*;
 
 /**
- * @Author: zhangqiaowenxiang
- * @Time: 2019/7/18
- * @Description: This is
+ * author zhangqiaowenxiang
+ * time 2019/7/18
+ * desc This is
  */
 @OutputModulePackage(module = "common", packagePath = "com/oeasy/common")
 @BindStringConstV8(value = "keyAZqwx", key = "valueAZqwx", comment = "HOHO_JDK1.8_DOC")

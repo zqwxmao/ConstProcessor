@@ -7,9 +7,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @Author: zhangqiaowenxiang
- * @Time: 2019/7/19
- * @Description: This is
+ * author zhangqiaowenxiang
+ * time 2019/7/19
+ * desc This is
  */
 @Retention(RetentionPolicy.CLASS)
 @Target(ElementType.TYPE)
