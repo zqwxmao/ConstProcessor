@@ -1,12 +1,9 @@
 apply plugin: 'java-library'
 
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
 }
-
-sourceCompatibility = "8"
-targetCompatibility = "8"
-
 
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
@@ -25,7 +22,7 @@ install {
                 packaging 'aar'
                 // 项目描述，复制我的话，这里需要修改。
                 groupId 'com.michaelfaith.constprocessor'
-                artifactId 'ConstProcessor-annotation'
+                artifactId 'libAnnotation'
 
                 name 'constprocessor annotation'// 可选，项目名称。
                 description 'annotation processor apt'// 可选，项目描述。
@@ -71,7 +68,7 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 }
 
 artifacts {
-    archives javadocJar
+//    archives javadocJar
     archives sourcesJar
 }
 
@@ -85,10 +82,11 @@ bintray {
     configurations = ['archives']
     pkg {
         repo = "ConstProcessor"  //Repository名字 需要自己在bintray网站上先添加
-        name = "ConstProcessor-annotation"// 发布到Bintray上的项目名字，这里的名字不是compile 'com.ansen.library:circleimage:1.0.1'中的circleimage。
+        name = "libAnnotation"// 发布到Bintray上的项目名字，这里的名字不是compile 'com.ansen.library:circleimage:1.0.1'中的circleimage。
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
         publish = true // 是否是公开项目。
+        publicDownloadNumbers = true
     }
 }

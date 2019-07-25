@@ -1,14 +1,15 @@
 apply plugin: 'java-library'
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
     api 'fr.inria.gforge.spoon:spoon-core:7.5.0-beta-21'
     implementation 'com.google.auto.service:auto-service:1.0-rc5'
     implementation project(':libAnnotation')
 }
 
-sourceCompatibility = "8"
-targetCompatibility = "8"
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
 
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
@@ -27,7 +28,7 @@ install {
                 packaging 'aar'
                 // 项目描述，复制我的话，这里需要修改。
                 groupId 'com.michaelfaith.constprocessor'
-                artifactId 'ConstProcessor-compiler'
+                artifactId 'libSpoon'
 
                 name 'constprocessor compiler'// 可选，项目名称。
                 description 'annotation processor apt'// 可选，项目描述。
@@ -73,7 +74,7 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 }
 
 artifacts {
-    archives javadocJar
+//    archives javadocJar
     archives sourcesJar
 }
 
@@ -87,10 +88,11 @@ bintray {
     configurations = ['archives']
     pkg {
         repo = "ConstProcessor"  //Repository名字 需要自己在bintray网站上先添加
-        name = "ConstProcessor-compiler"// 发布到Bintray上的项目名字，这里的名字不是compile 'com.ansen.library:circleimage:1.0.1'中的circleimage。
+        name = "libSpoon"// 发布到Bintray上的项目名字，这里的名字不是compile 'com.ansen.library:circleimage:1.0.1'中的circleimage。
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
         publish = true // 是否是公开项目。
+        publicDownloadNumbers = true
     }
 }

@@ -35,5 +35,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':libAnnotation')
     annotationProcessor project(':libSpoon')
+//    implementation 'com.michaelfaith.constprocessor:libAnnotation:1.0.0'
+//    annotationProcessor 'com.michaelfaith.constprocessor:libSpoon:1.0.0'
     implementation project(':common')
 }
